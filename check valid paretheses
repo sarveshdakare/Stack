@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool parenthisis(string str){
+    
+    stack<int>st;
+    
+    for (int i = 0; i < str.length(); i++) {
+        /* code */
+        char ch=str[i];
+        
+        if(ch=='{'||ch=='['||ch=='('){
+            st.push(ch);
+        }else{
+            if(!st.empty()){
+                char top=st.top();
+                
+                if((ch==')'&& top=='(')||(ch==']'&& top=='[')||(ch=='}'&&ch=='{')){
+                    st.pop();
+                }else{
+                    return false;
+                }
+            }
+        }
+    }
+    
+    if(!st.empty()){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+int main(){
+    string str="[(())]";
+    
+   bool a= parenthisis(str);
+   cout<<a<<endl;
+}
