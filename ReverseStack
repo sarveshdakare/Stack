@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string s="om";
+    string ans="";
+    
+    stack<int>st;
+    
+    for (int i = 0; i < s.length(); i++) {
+        /* code */
+        char ch=s[i];
+        st.push(ch);
+    }
+    while(!st.empty()){
+        /* code */
+        char ele=st.top();
+        st.pop();
+        ans=ans+ele;
+        
+    }
+    cout<<ans<<endl;
+    
+}
