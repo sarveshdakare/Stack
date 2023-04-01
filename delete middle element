@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+void deltemiddle(stack<int>&st,int count,int size){
+    
+    //BASE CONDITION
+    if(size/2==count){
+        st.pop();
+        return;
+    }
+    int num=st.top();
+    st.pop();
+    
+    //RECURSSIVE CALL
+    deltemiddle(st,count+1,size);
+    
+    st.push(num);
+    
+}
+
+int main(){
+    stack<int>st;
+    
+    st.push(1);
+    st.push(2);
+    st.push(3);
+    st.push(4);
+    st.push(5);
+    int count=0;
+    deltemiddle(st,count,st.size());
+    
+   
+    
+}
